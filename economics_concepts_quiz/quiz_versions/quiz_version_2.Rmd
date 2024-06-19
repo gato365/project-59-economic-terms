@@ -1,0 +1,39 @@
+---
+title: "Quiz Version 2"
+author: "Immanuel Williams PhD"
+date: "`r Sys.Date()`"
+output: learnr::tutorial
+runtime: shiny_prerendered
+---
+
+
+
+
+```{r setup, include=FALSE}
+library(tidyverse)
+library(learnr)
+library(gradethis)
+library(gato365dsh2024)
+gradethis::gradethis_setup()
+knitr::opts_chunk$set(echo = FALSE)
+source("question_function_for_version_2.R")
+```
+
+
+
+```{r loaddata}
+micoeconomics_concepts_df <- readxl::read_xlsx(here::here("Data","micoeconomics_concepts.xlsx"))
+```
+
+
+```{r quiz1}
+generate_quiz(df = micoeconomics_concepts_df, selected_unit = 1)
+```
+
+
+
+```{r quiz2}
+generate_quiz(df = micoeconomics_concepts_df, selected_unit = 2)
+```
+
+## and Error
